@@ -13,6 +13,7 @@
       crossorigin="anonymous"
     />
     <title>Vanilla Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -40,12 +41,15 @@
             <div class="WeatherInfo">
               <div class="row">
                 <div class="col-6">
-                  <h1>Gdansk</h1>
+                  <h1 id="city">Oslo</h1>
                   <ul>
-                    <li><span>Friday 17:45</span>, fog</li>
                     <li>
-                      Humidity: <strong>96%</strong>, Wind:
-                      <strong>0.1km/h</strong>
+                      <span id="date">Friday 17:45,</span>,
+                      <span id="description">fog</span>
+                    </li>
+                    <li>
+                      Humidity: <span id="humidity">96</span>%, Wind:
+                      <span id="wind">1</span> km/h
                     </li>
                   </ul>
                 </div>
@@ -54,11 +58,13 @@
                     <div class="clearfix weather-temperature">
                       <img
                         src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                        alt="clouds"
+                        id="icon"
                         class="float-left"
                       />
                       <div class="float-right">
-                        <span class="temperature">9</span>
-                        <span class="units">°C |°F</span>
+                        <span id="temperature" class="temperature"></span>
+                        <span class="units">°C |<a href="">°F</a></span>
                       </div>
                     </div>
                   </div>
@@ -128,6 +134,6 @@
         >
       </div>
     </div>
-    <script src="src/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -34,8 +34,9 @@
                 <div class="col-3 p-0">
                   <input
                     type="submit"
-                    class="btn btn-primary w-100"
+                    class="btn w-100"
                     value="Search"
+                    id="search-button"
                   />
                 </div>
               </div>
@@ -76,63 +77,7 @@
                 </div>
               </div>
             </div>
-            <div class="WeatherForecast row">
-              <div class="col">
-                <div class="WeatherForecastPreview">
-                  <div class="forecast-time">Fri</div>
-                  <img
-                    src="http://openweathermap.org/img/wn/50d@2x.png"
-                    alt=""
-                    width="42"
-                  />
-                  <canvas width="38" height="38"></canvas>
-                  <div class="forecast-temperature">
-                    <span class="forecast-temperature-max">13°</span
-                    ><span class="forecast-temperature-min">9°</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="WeatherForecastPreview">
-                  <div class="forecast-time">Sat</div>
-                  <canvas width="38" height="38"></canvas>
-                  <div class="forecast-temperature">
-                    <span class="forecast-temperature-max">13°</span
-                    ><span class="forecast-temperature-min">11°</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="WeatherForecastPreview">
-                  <div class="forecast-time">Sun</div>
-                  <canvas width="38" height="38"></canvas>
-                  <div class="forecast-temperature">
-                    <span class="forecast-temperature-max">13°</span
-                    ><span class="forecast-temperature-min">9°</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="WeatherForecastPreview">
-                  <div class="forecast-time">Mon</div>
-                  <canvas width="38" height="38"></canvas>
-                  <div class="forecast-temperature">
-                    <span class="forecast-temperature-max">12°</span
-                    ><span class="forecast-temperature-min">10°</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="WeatherForecastPreview">
-                  <div class="forecast-time">Tue</div>
-                  <canvas width="38" height="38"></canvas>
-                  <div class="forecast-temperature">
-                    <span class="forecast-temperature-max">15°</span
-                    ><span class="forecast-temperature-min">9°</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="WeatherForecast" id="forecast"></div>
           </div>
         </div>
 

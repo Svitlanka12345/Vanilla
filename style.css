@@ -49,10 +49,17 @@ li:first-letter {
 }
 #search-button {
   color: white;
-  background-color: #659faa;
+  background-color: #5d8e98;
+  border: none;
+}
+#search-location {
+  color: white;
+  background-color: #659faacd;
+  border: none;
 }
 .overview {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .weather-temperature img {

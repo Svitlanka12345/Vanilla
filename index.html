@@ -14,6 +14,10 @@
     />
     <title>Vanilla Weather App</title>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/25c4b6fc74.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -22,22 +26,30 @@
           <div class="weather">
             <form id="search-form">
               <div class="row">
-                <div class="col-9">
+                <div class="col-lg-6">
                   <input
                     type="search"
                     placeholder="Enter a city.."
-                    class="form-control search-input"
+                    class="form-control search-input shadow-sm"
                     id="city-input"
                     autocomplete="off"
                   />
                 </div>
-                <div class="col-3 p-0">
+                <div class="col-3">
                   <input
                     type="submit"
-                    class="btn w-100"
+                    class="form-control btn btn-primary shadow-sm w-100"
                     value="Search"
                     id="search-button"
                   />
+                </div>
+                <div class="col-3">
+                  <button
+                    class="form-control btn btn-success shadow-sm w-100"
+                    id="search-location"
+                  >
+                    By location
+                  </button>
                 </div>
               </div>
             </form>

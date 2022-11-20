@@ -31,7 +31,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -44,7 +43,7 @@ function displayForecast(response) {
         `
   <div class="col">
   <div class="card">
-  <div class="card-body">
+  <div class="card-body shadow-sm">
     <div class="WeatherForecastPreview">
       <div class="forecast-time">${formatDay(forecastDay.dt)}</div>
       <img
@@ -72,7 +71,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "17ad6e67aa629189f73b053634668b20";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric
 `;
@@ -133,7 +131,18 @@ function displayCelsiusTemperature(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+function searchCurrentLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "d59265a17617259a858c34b2c6833049";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
 let celsiusTemperature = null;
 //displayForecast();
 let farenheitLink = document.querySelector("#farenheit-link");
@@ -141,5 +150,6 @@ farenheitLink.addEventListener("click", displayFarenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
+let currentLocationButton = document.querySelector("#search-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 search("Gdansk");
